@@ -28,5 +28,5 @@ TEST(GuesserTest, match) {
 
 TEST(GuesserTest, no_match) {
 	Guesser object("Secret");
-	ASSERT_TRUE(object.match("Guess"));
+	ASSERT_FALSE(object.match("Guess"));
 }
