@@ -38,5 +38,5 @@ TEST(GuesserTest, same_length) {
 
 TEST(GuesserTest, near_match) {
 	Guesser object("Secret");
-	ASSERT_GT(0, object.match("Secretend"));
+	ASSERT_EQ(0, object.match("Secretend"));
 }
