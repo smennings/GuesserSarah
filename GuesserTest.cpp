@@ -58,5 +58,27 @@ TEST(GuesserTest, different_case) {
 
 TEST(GuesserTest, reversed) {
 	Guesser object("Secret");
-	ASSERT_EQ(2, object.distance("terceS"));
+	ASSERT_EQ(4, object.distance("terceS"));
+}
+
+TEST(GuesserTest, three_guesses) {
+	Guesser object("Secret");
+	ASSERT_FALSE(object.match("Pecret"));
+	ASSERT_FALSE(object.match("secret"));
+	ASSERT_TRUE(object.match("Secret"))
+}
+
+TEST(GuesserTest, many_guesses) {
+	Guesser object("Secret");
+	ASSERT_FALSE(object.match("Pecret"));
+	ASSERT_FALSE(object.match("secret"));
+	ASSERT_FALSE(object.match("lecret"));
+	ASSERT_FALSE(object.match("Secret"));
+}
+
+TEST(GuesserTest, big_difference_guesses) {
+	Guesser object("Secret");
+	ASSERT_FALSE(object.match("matchs"));
+	ASSERT_FALSE(object.match("secret"));
+	ASSERT_FALSE(object.match("Secret"));
 }
