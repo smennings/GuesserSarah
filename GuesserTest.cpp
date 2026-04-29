@@ -23,5 +23,5 @@ TEST(GuesserTest, smoke_test)
 
 TEST(GuesserTest, match) {
 	Guesser object("Secret");
-	ASSERT_EQ(0, object.match("Secret"));
+	ASSERT_TRUE(0, object.match("Secret"));
 }
