@@ -48,5 +48,5 @@ TEST(GuesserTest, different) {
 
 TEST(GuesserTest, sandwiched) {
 	Guesser object("Secret");
-	ASSERT_LT(0, object.distance("MSecretM"));
+	ASSERT_EQ(2, object.distance("MSecretM"));
 }
