@@ -82,6 +82,7 @@ TEST(GuesserTest, big_difference_guesses) {
 	ASSERT_FALSE(object.match("secret"));
 	ASSERT_FALSE(object.match("Secret"));
 }
+// I don't know how to test this, but the number of guesses wouldn't be going down, right?
 
 TEST(GuesserTest, find_early_guesses) {
 	Guesser object("Secret");
