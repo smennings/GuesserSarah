@@ -65,7 +65,7 @@ TEST(GuesserTest, three_guesses) {
 	Guesser object("Secret");
 	ASSERT_FALSE(object.match("Pecret"));
 	ASSERT_FALSE(object.match("secret"));
-	ASSERT_TRUE(object.match("Secret"))
+	ASSERT_TRUE(object.match("Secret"));
 }
 
 TEST(GuesserTest, many_guesses) {
