@@ -50,3 +50,13 @@ TEST(GuesserTest, sandwiched) {
 	Guesser object("Secret");
 	ASSERT_EQ(2, object.distance("MSecretM"));
 }
+
+TEST(GuesserTest, different_case) {
+	Guesser object("Secret");
+	ASSERT_EQ(1, object.distance("secret"));
+}
+
+TEST(GuesserTest, reversed) {
+	Guesser object("Secret");
+	ASSERT_LT(6, object.distance("terceS"));
+}
