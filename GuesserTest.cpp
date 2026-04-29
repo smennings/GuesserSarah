@@ -38,10 +38,10 @@ TEST(GuesserTest, same_length) {
 
 TEST(GuesserTest, near_match) {
 	Guesser object("Secret");
-	ASSERT_GT(0, object.distance("Secretend"));
+	ASSERT_LT(0, object.distance("Secretend"));
 }
 
 TEST(GuesserTest, different) {
 	Guesser object("Secret");
-	ASSERT_GT(0, object.distance("Matchs"));
+	ASSERT_LT(0, object.distance("Matchs"));
 }
