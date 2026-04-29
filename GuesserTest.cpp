@@ -45,3 +45,8 @@ TEST(GuesserTest, different) {
 	Guesser object("Secret");
 	ASSERT_LT(0, object.distance("Matchs"));
 }
+
+TEST(GuesserTest, sandwiched) {
+	Guesser object("Secret");
+	ASSERT_LT(0, object.distance("MSecretM"));
+}
