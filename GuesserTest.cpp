@@ -48,7 +48,7 @@ TEST(GuesserTest, different) {
 
 TEST(GuesserTest, sandwiched) {
 	Guesser object("Secret");
-	ASSERT_EQ(8, object.distance("MSecretM"));
+	ASSERT_EQ(6, object.distance("MSecretM"));
 }
 
 TEST(GuesserTest, different_case) {
@@ -81,4 +81,12 @@ TEST(GuesserTest, big_difference_guesses) {
 	ASSERT_FALSE(object.match("matchs"));
 	ASSERT_FALSE(object.match("secret"));
 	ASSERT_FALSE(object.match("Secret"));
+}
+
+TEST(GuesserTest, find_early_guesses) {
+	Guesser object("Secret");
+	ASSERT_FALSE(object.match("secret"));
+	ASSERT_TRUE(object.match("Secret"));
+	ASSERT_FALSE(object.match("secret"));
+	ASSERT_TRUE(object.match("Secret"));
 }
