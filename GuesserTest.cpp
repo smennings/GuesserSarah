@@ -20,3 +20,8 @@ TEST(GuesserTest, smoke_test)
   Guesser object("Secret");
   ASSERT_EQ( 1+1, 2 );
 }
+
+TEST(GuesserTest, match) {
+	Guesser secret("true");
+	ASSERT_EQ(0, secret.match("true"))
+}
